@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+<script>
+const xArray = {{ xArray|tojson|safe }};
+const yArray = {{ yArray|tojson|safe }};
+
+const layout = {title:"Persentase Kematangan Nanas"};
+
+const data = [{labels:xArray, values:yArray, type:"pie"}];
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+</body>
+</html>
